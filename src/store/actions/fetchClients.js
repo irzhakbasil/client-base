@@ -1,0 +1,31 @@
+import { FETCH_CLIENTS, FETCH_CLIENTS_ERROR } from "../types";
+
+const RootUrl = "https://react-my-burger-marvin.firebaseio.com/clients.json";
+
+export const fetchClientsSuccess = payload => ({
+  type: FETCH_CLIENTS,
+  payload
+});
+
+export const fetchClientsError = error => ({
+  type: FETCH_CLIENTS_ERROR,
+  payload: error
+});
+
+export const fetchClient = () => {
+  return async dispatch => {
+    try {
+      let response = await RootUrl;
+      let json = await response.json();
+      let data = [];
+      if (json) {
+        for (let key in json) {
+          data.push(json[key]);
+        }
+      }
+      dispatch(fetchClientsSuccess(data[0]));
+    } catch (error) {
+      dispatch(fetchClientsError(error.message));
+    }
+  };
+};
