@@ -15,7 +15,7 @@ export const fetchClientsError = error => ({
 export const fetchClients = () => {
   return async dispatch => {
     try {
-      let response = await RootUrl;
+      let response = await fetch(RootUrl);
       let json = await response.json();
       let data = [];
       if (json) {
