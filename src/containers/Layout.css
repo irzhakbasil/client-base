@@ -7,11 +7,13 @@
 
 .left-panel {
   display: inline-block;
-  width: 400px;
+  width: 350px;
   height: inherit;
 }
 
 .right-panel {
+  background-color: rgb(94, 94, 94);
   display: inline-block;
   height: inherit;
+  width: calc(100% - 350px);
 }
