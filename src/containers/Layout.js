@@ -21,7 +21,7 @@ class Layout extends Component {
       <div className="layout">
         <div className="left-panel">
           <SearchBar />
-          <ClientList />
+          <ClientList clients={this.props.clients} />
         </div>
         <div className="right-panel">
           <ClientInfo />
@@ -31,7 +31,13 @@ class Layout extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    clients: state.clientReducer.clients
+  };
+};
+
 export default connect(
-  null,
+  mapStateToProps,
   { fetchClients }
 )(Layout);
