@@ -1,6 +1,6 @@
 import { FETCH_CLIENTS, FETCH_CLIENTS_ERROR } from "../types";
 
-const RootUrl = "https://react-my-burger-marvin.firebaseio.com/clients.json";
+const RootUrl = "https://react-my-burger-marvin.firebaseio.com/clients.json"; // im using my stydy project database (firebase) here.
 
 export const fetchClientsSuccess = payload => ({
   type: FETCH_CLIENTS,
