@@ -11,9 +11,6 @@ import ClientInfo from "../components/ClientInfo/ClientInfo";
 class Layout extends Component {
   componentDidMount() {
     this.props.fetchClients();
-    setTimeout(() => {
-      console.log(this.props);
-    }, 3000);
   }
 
   render() {
