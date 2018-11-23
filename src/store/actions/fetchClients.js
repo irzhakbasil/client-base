@@ -12,7 +12,7 @@ export const fetchClientsError = error => ({
   payload: error
 });
 
-export const fetchClient = () => {
+export const fetchClients = () => {
   return async dispatch => {
     try {
       let response = await RootUrl;

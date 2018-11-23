@@ -6,5 +6,12 @@ const initialState = {
 };
 
 export default function clientReducer(state = initialState, action) {
-  return state;
+  switch (action.type) {
+    case FETCH_CLIENTS:
+      return { ...state, clients: action.payload };
+    case FETCH_CLIENTS_ERROR:
+      return { ...state, error: action.payload, clients: null };
+    default:
+      return state;
+  }
 }
