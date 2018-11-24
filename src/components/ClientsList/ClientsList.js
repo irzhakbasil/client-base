@@ -11,7 +11,11 @@ const ClientList = props => {
   if (props.clients) {
     clientsList = props.clients.map((client, index) => {
       return (
-        <div className="client-wrapper" key={client.contact.email}>
+        <div
+          className="client-wrapper"
+          key={client.contact.email}
+          onClick={() => props.click(index)}
+        >
           <div className="client-avatar">
             <img src={client.general.avatar} alt={client.general.lastName} />
           </div>
