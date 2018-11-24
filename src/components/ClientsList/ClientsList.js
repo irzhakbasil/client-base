@@ -1,5 +1,7 @@
 import React from "react";
 import "./ClientsList.css";
+import filteredClientsSelector from "../../selectors/filteredClientsSelector";
+import { connect } from "react-redux";
 
 const ClientList = props => {
   console.log(props);
@@ -32,8 +34,37 @@ const ClientList = props => {
       );
     });
   }
+  if (props.fclients && props.fclients.length > 0) {
+    clientsList = props.fclients.map((client, index) => {
+      return (
+        <div
+          className="client-wrapper"
+          key={client.contact.email}
+          onClick={() => props.click(index)}
+        >
+          <div className="client-avatar">
+            <img src={client.general.avatar} alt={client.general.lastName} />
+          </div>
+          <div className="client_short-info">
+            <h4>
+              {client.general.firstName} {client.general.lastName}
+            </h4>
+            <p>
+              {client.job.title} {"in"} {client.job.company}
+            </p>
+          </div>
+        </div>
+      );
+    });
+  }
   if (props.error) clientsList = <div className="error">{props.error}</div>;
   return <div className="client_list">{clientsList}</div>;
 };
 
-export default ClientList;
+const mapStateToProps = state => {
+  return {
+    fclients: filteredClientsSelector(state)
+  };
+};
+
+export default connect(mapStateToProps)(ClientList);

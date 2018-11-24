@@ -9,7 +9,7 @@ const initialState = {
   clients: null,
   error: null,
   selectedClient: null,
-  matches: null
+  matches: []
 };
 
 export default function clientReducer(state = initialState, action) {
