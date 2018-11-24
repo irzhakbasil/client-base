@@ -45,12 +45,11 @@ class Layout extends Component {
   };
 
   filteredClick = obj => {
-    const selected = {
-      address: { ...obj.address },
-      contact: { ...obj.contact },
-      general: { ...obj.general },
-      job: { ...obj.job }
-    };
+    const selected = {};
+
+    for (let key in obj) {
+      selected[key] = obj[key];
+    }
     this.props.selectClient(selected);
   };
 
