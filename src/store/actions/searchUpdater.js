@@ -1,6 +1,6 @@
-import { SERCH_TRIGGERED } from "../types";
+import { SEARCH_TRIGGERED } from "../types";
 
 export const searchUpdater = array => ({
-  type: SERCH_TRIGGERED,
+  type: SEARCH_TRIGGERED,
   payload: array
 });

@@ -2,7 +2,7 @@ import {
   FETCH_CLIENTS,
   FETCH_CLIENTS_ERROR,
   SELECT_CLIENT,
-  SERCH_TRIGGERED,
+  SEARCH_TRIGGERED,
   SEARCH_TERM_UPDATED
 } from "../types";
 
@@ -23,7 +23,7 @@ export default function clientReducer(state = initialState, action) {
       return { ...state, error: action.payload, clients: null };
     case SELECT_CLIENT:
       return { ...state, selectedClient: action.payload };
-    case SERCH_TRIGGERED:
+    case SEARCH_TRIGGERED:
       return { ...state, matches: action.payload };
     case SEARCH_TERM_UPDATED:
       return { ...state, searchTerm: action.payload };
