@@ -16,16 +16,6 @@ class Layout extends Component {
     this.props.fetchClients();
   }
 
-  selectClient = index => {
-    const selected = {
-      address: { ...this.props.clients[index].address },
-      contact: { ...this.props.clients[index].contact },
-      general: { ...this.props.clients[index].general },
-      job: { ...this.props.clients[index].job }
-    };
-    this.props.selectClient(selected);
-  };
-
   inputChange = text => {
     let getIndexesArray = function(arr, serchTerm) {
       let objFilter = function(arr) {
@@ -74,7 +64,6 @@ class Layout extends Component {
             filteredClick={this.filteredClick}
             clients={this.props.clients}
             error={this.props.error}
-            click={this.selectClient}
           />
         </div>
         <div className="right-panel">

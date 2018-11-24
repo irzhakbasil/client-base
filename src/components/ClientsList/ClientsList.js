@@ -14,14 +14,22 @@ const ClientList = props => {
   if (props.clients) {
     clientsList = props.clients.map((client, index) => {
       return (
-        <ClientListItem client={client} filteredClick={props.filteredClick} />
+        <ClientListItem
+          key={index}
+          client={client}
+          filteredClick={props.filteredClick}
+        />
       );
     });
   }
   if (props.fclients && props.fclients.length > 0) {
     clientsList = props.fclients.map((client, index) => {
       return (
-        <ClientListItem client={client} filteredClick={props.filteredClick} />
+        <ClientListItem
+          key={index}
+          client={client}
+          filteredClick={props.filteredClick}
+        />
       );
     });
   }

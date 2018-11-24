@@ -4,11 +4,7 @@ import "./ClientListItem.css";
 const ClientListItem = props => {
   let { client, filteredClick } = props;
   return (
-    <div
-      className="client-wrapper"
-      key={client.contact.email}
-      onClick={() => props.filteredClick(client)}
-    >
+    <div className="client-wrapper" onClick={() => props.filteredClick(client)}>
       <div className="client-avatar">
         <img src={client.general.avatar} alt={client.general.lastName} />
       </div>
