@@ -85,3 +85,10 @@
       opacity: 0;
     }
 }
+
+.error {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: red;
+}

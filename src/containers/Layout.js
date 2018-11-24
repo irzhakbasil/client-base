@@ -57,7 +57,11 @@ class Layout extends Component {
       <div className="layout">
         <div className="left-panel">
           <SearchBar inputChange={this.inputChange} />
-          <ClientList clients={this.props.clients} click={this.selectClient} />
+          <ClientList
+            clients={this.props.clients}
+            error={this.props.error}
+            click={this.selectClient}
+          />
         </div>
         <div className="right-panel">
           <ClientInfo client={this.props.selectedClient} />
@@ -70,6 +74,7 @@ class Layout extends Component {
 const mapStateToProps = state => {
   return {
     clients: state.clientReducer.clients,
+    error: state.clientReducer.error,
     selectedClient: state.clientReducer.selectedClient
   };
 };

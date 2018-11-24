@@ -2,6 +2,7 @@ import React from "react";
 import "./ClientsList.css";
 
 const ClientList = props => {
+  console.log(props);
   let clientsList = (
     <div className="lds-ripple">
       <div />
@@ -31,6 +32,7 @@ const ClientList = props => {
       );
     });
   }
+  if (props.error) clientsList = <div className="error">{props.error}</div>;
   return <div className="client_list">{clientsList}</div>;
 };
 
