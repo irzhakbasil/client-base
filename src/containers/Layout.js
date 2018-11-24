@@ -32,7 +32,7 @@ class Layout extends Component {
           <ClientList clients={this.props.clients} click={this.selectClient} />
         </div>
         <div className="right-panel">
-          <ClientInfo clients={this.props.clients} />
+          <ClientInfo client={this.props.selectedClient} />
         </div>
       </div>
     );
@@ -41,7 +41,8 @@ class Layout extends Component {
 
 const mapStateToProps = state => {
   return {
-    clients: state.clientReducer.clients
+    clients: state.clientReducer.clients,
+    selectedClient: state.clientReducer.selectedClient
   };
 };
 

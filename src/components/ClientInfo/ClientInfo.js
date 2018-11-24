@@ -2,12 +2,11 @@ import React from "react";
 import "./ClientInfo.css";
 
 const ClientInfo = props => {
-  console.log(props.clients);
   let clientInfo = (
     <div className="client-not-selected">Select a client to see info</div>
   );
-  if (props.clients) {
-    const client = props.clients[1];
+  if (props.client) {
+    const client = props.client;
     clientInfo = (
       <div className="client-selected">
         <div className="client-header-container">
