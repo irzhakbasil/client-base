@@ -7,3 +7,85 @@
     font-weight: bold;
     font-size: 4rem;
 }
+
+.client-header-container {
+    margin-left: 30px;
+    display: flex;
+}
+
+.client-selected {
+    min-width: 578px;
+    background-color: rgb(98, 103, 114);
+    margin-top: 40px;
+    padding: 30px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+.client-header {
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.client-fullinfo {
+    margin: 25px 60px;
+}
+
+.client-name {
+    color: rgb(255, 255, 255);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.client-header p {
+    color: rgb(226, 225, 225);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 0;
+}
+
+.img-big{
+    border-radius: 8px;
+    height: 170px;
+    width: 170px;
+    -webkit-box-shadow: 0px 3px 25px 6px rgb(167, 164, 164);
+-moz-box-shadow: 0px 3px 25px 6px rgb(167, 164, 164);
+box-shadow: 0px 3px 33px 6px rgb(167, 164, 164);
+}
+
+.info-wrapper {
+    display: flex;
+}
+
+.adress {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.adress h4 {
+    color: rgb(27, 26, 61);
+    font-size: 1.4rem;
+    margin: 0;
+}
+.adress p {
+    font-size: 1.2rem;
+    margin: 0 5px;
+    color: rgb(220, 223, 196);
+}
+.contacts {
+    margin-top: 30px;
+    margin-left: 50px;
+}
+.contacts h4 {
+    color:  rgb(27, 26, 61);
+    font-size: 1.4rem;
+    margin: 0;
+}
+.contacts p {
+    margin: 0 5px;
+    color: rgb(203, 204, 198);
+    font-size: 1.2rem;
+}
+.text-highlight {
+    color: rgb(105, 38, 38);
+}

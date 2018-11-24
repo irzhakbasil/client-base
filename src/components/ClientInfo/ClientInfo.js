@@ -57,7 +57,11 @@ const ClientInfo = props => {
       </div>
     );
   }
-  return <div>{clientInfo}</div>;
+  return (
+    <div className="client-fullinfo">
+      <div>{clientInfo}</div>;
+    </div>
+  );
 };
 
 export default ClientInfo;
