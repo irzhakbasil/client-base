@@ -18,25 +18,23 @@ class Layout extends Component {
 
   inputChange = text => {
     let getIndexesArray = function(arr, serchTerm) {
-      let objFilter = function(arr) {
-        let tmpObj = [];
-        for (let a in arr) {
-          let tmp = arr[a];
-          for (let c in tmp) {
-            tmpObj.push(tmp[c]);
-          }
+      //mabe I can create another reselect
+      // file to handle this logic?
+      let getKeyValues = function(obj) {
+        let tmp = [];
+        for (let key in obj) {
+          let obj_values = Object.values(obj[key]);
+          tmp = tmp.concat(obj_values);
         }
-        return tmpObj;
+        return tmp;
       };
       let indexes = arr
         .map((client, index) => {
-          let x = objFilter(client);
+          let x = getKeyValues(client);
           x = x.filter(v => v.toLowerCase().includes(serchTerm.toLowerCase()));
           if (x.length > 0) return index;
         })
-        .filter(function(el) {
-          return el;
-        });
+        .filter(el => el);
       return indexes;
     };
     const matches = getIndexesArray(this.props.clients, text);
@@ -46,7 +44,6 @@ class Layout extends Component {
 
   filteredClick = obj => {
     const selected = {};
-
     for (let key in obj) {
       selected[key] = obj[key];
     }
