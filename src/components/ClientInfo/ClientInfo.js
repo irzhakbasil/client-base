@@ -15,10 +15,10 @@ const ClientInfo = props => {
             <h3 className="client-name">
               {client.general.firstName} {client.general.lastName}
             </h3>
-            <p className="job">
+            <p>
               {client.job.title} {"in"}
             </p>
-            <p className="wokrplace"> {client.job.company}</p>
+            <p> {client.job.company}</p>
           </div>
         </div>
         <div className="info-wrapper">
