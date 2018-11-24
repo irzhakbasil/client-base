@@ -40,7 +40,7 @@ const ClientList = props => {
         <div
           className="client-wrapper"
           key={client.contact.email}
-          onClick={() => props.click(index)}
+          onClick={() => props.filteredClick(client)}
         >
           <div className="client-avatar">
             <img src={client.general.avatar} alt={client.general.lastName} />

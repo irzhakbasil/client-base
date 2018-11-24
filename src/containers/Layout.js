@@ -52,12 +52,23 @@ class Layout extends Component {
     this.props.searchUpdater(matches);
   };
 
+  filteredClick = obj => {
+    const selected = {
+      address: { ...obj.address },
+      contact: { ...obj.contact },
+      general: { ...obj.general },
+      job: { ...obj.job }
+    };
+    this.props.selectClient(selected);
+  };
+
   render() {
     return (
       <div className="layout">
         <div className="left-panel">
           <SearchBar inputChange={this.inputChange} />
           <ClientList
+            filteredClick={this.filteredClick}
             clients={this.props.clients}
             error={this.props.error}
             click={this.selectClient}
