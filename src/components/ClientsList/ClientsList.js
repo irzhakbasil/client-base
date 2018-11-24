@@ -7,7 +7,7 @@ const ClientList = props => {
       return (
         <div className="client-wrapper" key={client.contact.email}>
           <div className="client-avatar">
-            <img src={client.general.avatar} alt="picture" />
+            <img src={client.general.avatar} alt={client.general.lastName} />
           </div>
           <div className="client_short-info">
             <h4>
