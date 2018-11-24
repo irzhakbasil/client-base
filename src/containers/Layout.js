@@ -32,14 +32,18 @@ class Layout extends Component {
         .map((client, index) => {
           let x = getKeyValues(client);
           x = x.filter(v => v.toLowerCase().includes(serchTerm.toLowerCase()));
-          if (x.length > 0) return index;
+          if (x.length > 0) return index.toString();
         })
         .filter(el => el);
       return indexes;
     };
     const matches = getIndexesArray(this.props.clients, text);
     this.props.updateSearchTerm(text);
-    this.props.searchUpdater(matches);
+    this.props.searchUpdater(
+      matches.map(el => {
+        return Number(el);
+      })
+    );
   };
 
   filteredClick = obj => {
