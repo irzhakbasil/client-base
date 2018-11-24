@@ -1,0 +1,38 @@
+.user_list {
+    height: calc(100vh - 55px);
+    overflow: auto;
+    margin-top: 55px;
+}
+
+.client-wrapper {
+    margin: 10px 0;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.client-avatar {
+    display: inline-block;
+}
+.client-avatar img{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}
+.client_short-info{
+    padding: 5px;
+    width: 80%;
+    display: inline-block;
+}
+
+.client_short-info h4,
+.client_short-info p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+}
+.client-wrapper:hover {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgb(212, 233, 232);   
+}

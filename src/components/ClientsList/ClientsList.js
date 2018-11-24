@@ -1,4 +1,5 @@
 import React from "react";
+import "./ClientsList.css";
 
 const ClientList = props => {
   let clintsList = <div>Loading</div>;
@@ -21,7 +22,7 @@ const ClientList = props => {
       );
     });
   }
-  return <div className="user_list">{clintsList}</div>;
+  return <div className="client_list">{clintsList}</div>;
 };
 
 export default ClientList;
