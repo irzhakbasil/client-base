@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchClients } from "../store/actions/fetchClients";
 import { selectClient } from "../store/actions/selectClient";
+import { searchUpdater } from "../store/actions/searchUpdater";
 
 import "./Layout.css";
 
@@ -24,11 +25,38 @@ class Layout extends Component {
     this.props.selectClient(selected);
   };
 
+  inputChange = text => {
+    let getIndexesArray = function(arr, serchTerm) {
+      let objFilter = function(arr) {
+        let tmpObj = [];
+        for (let a in arr) {
+          let tmp = arr[a];
+          for (let c in tmp) {
+            tmpObj.push(tmp[c]);
+          }
+        }
+        return tmpObj;
+      };
+      let indexes = arr
+        .map((client, index) => {
+          let x = objFilter(client);
+          x = x.filter(v => v.toLowerCase().includes(serchTerm.toLowerCase()));
+          if (x.length > 0) return index;
+        })
+        .filter(function(el) {
+          return el;
+        });
+      return indexes;
+    };
+    const matches = getIndexesArray(this.props.clients, text);
+    this.props.searchUpdater(matches);
+  };
+
   render() {
     return (
       <div className="layout">
         <div className="left-panel">
-          <SearchBar />
+          <SearchBar inputChange={this.inputChange} />
           <ClientList clients={this.props.clients} click={this.selectClient} />
         </div>
         <div className="right-panel">
@@ -48,5 +76,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchClients, selectClient }
+  { fetchClients, selectClient, searchUpdater }
 )(Layout);

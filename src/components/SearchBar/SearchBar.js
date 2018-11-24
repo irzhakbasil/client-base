@@ -9,7 +9,11 @@ const SearchBar = props => {
         <img className="img" src={glass_icon} alt="search" />
       </div>
       <div className="input-container">
-        <input type="text" placeholder="Search..." />
+        <input
+          type="text"
+          placeholder="Search..."
+          onChange={event => props.inputChange(event.target.value)}
+        />
       </div>
     </div>
   );
