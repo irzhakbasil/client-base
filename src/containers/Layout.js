@@ -21,7 +21,7 @@ class Layout extends Component {
           <ClientList clients={this.props.clients} />
         </div>
         <div className="right-panel">
-          <ClientInfo />
+          <ClientInfo clients={this.props.clients} />
         </div>
       </div>
     );

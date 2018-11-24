@@ -2,14 +2,14 @@ import React from "react";
 import "./ClientsList.css";
 
 const ClientList = props => {
-  let clintsList = (
-    <div class="lds-ripple">
+  let clientsList = (
+    <div className="lds-ripple">
       <div />
       <div />
     </div>
   );
   if (props.clients) {
-    clintsList = props.clients.map((client, index) => {
+    clientsList = props.clients.map((client, index) => {
       return (
         <div className="client-wrapper" key={client.contact.email}>
           <div className="client-avatar">
@@ -27,7 +27,7 @@ const ClientList = props => {
       );
     });
   }
-  return <div className="client_list">{clintsList}</div>;
+  return <div className="client_list">{clientsList}</div>;
 };
 
 export default ClientList;
