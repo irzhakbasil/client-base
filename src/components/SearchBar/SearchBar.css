@@ -1,4 +1,4 @@
-.serch-wrapper {
+.search-wrapper {
     padding: 8px 0;
     display: flex;
     justify-content: center;
@@ -6,6 +6,7 @@
     top:0;
     left: 0;
     right: calc(100% - 350px);
+    background-color: red;
 }
 .img {
     margin-top: 5px;
