@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { fetchClients } from "../store/actions/fetchClients";
 import { selectClient } from "../store/actions/selectClient";
 import { searchUpdater } from "../store/actions/searchUpdater";
+import { updateSearchTerm } from "../store/actions/updateSearchTerm";
 
 import "./Layout.css";
 
@@ -49,6 +50,7 @@ class Layout extends Component {
       return indexes;
     };
     const matches = getIndexesArray(this.props.clients, text);
+    this.props.updateSearchTerm(text);
     this.props.searchUpdater(matches);
   };
 
@@ -68,6 +70,7 @@ class Layout extends Component {
         <div className="left-panel">
           <SearchBar inputChange={this.inputChange} />
           <ClientList
+            searchTerm={this.props.searchTerm}
             filteredClick={this.filteredClick}
             clients={this.props.clients}
             error={this.props.error}
@@ -84,6 +87,7 @@ class Layout extends Component {
 
 const mapStateToProps = state => {
   return {
+    searchTerm: state.clientReducer.searchTerm,
     clients: state.clientReducer.clients,
     error: state.clientReducer.error,
     selectedClient: state.clientReducer.selectedClient
@@ -92,5 +96,5 @@ const mapStateToProps = state => {
 
 export default connect(
   mapStateToProps,
-  { fetchClients, selectClient, searchUpdater }
+  { fetchClients, selectClient, searchUpdater, updateSearchTerm }
 )(Layout);

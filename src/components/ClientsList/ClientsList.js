@@ -57,6 +57,9 @@ const ClientList = props => {
       );
     });
   }
+  if (props.searchTerm.length > 0 && props.fclients.length === 0) {
+    clientsList = <div className="no-matches">No matching records</div>;
+  }
   if (props.error) clientsList = <div className="error">{props.error}</div>;
   return <div className="client_list">{clientsList}</div>;
 };

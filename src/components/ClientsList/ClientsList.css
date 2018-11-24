@@ -92,3 +92,9 @@
     font-size: 1.2rem;
     color: red;
 }
+.no-matches {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(23, 46, 122);
+}
