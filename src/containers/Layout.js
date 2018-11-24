@@ -18,7 +18,7 @@ class Layout extends Component {
 
   inputChange = text => {
     let getIndexesArray = function(arr, serchTerm) {
-      //mabe I can create another reselect
+      //maybe I can create another reselect
       // file to handle this logic?
       let getKeyValues = function(obj) {
         let tmp = [];
