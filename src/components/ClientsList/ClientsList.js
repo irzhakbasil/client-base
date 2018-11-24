@@ -2,7 +2,12 @@ import React from "react";
 import "./ClientsList.css";
 
 const ClientList = props => {
-  let clintsList = <div>Loading</div>;
+  let clintsList = (
+    <div class="lds-ripple">
+      <div />
+      <div />
+    </div>
+  );
   if (props.clients) {
     clintsList = props.clients.map((client, index) => {
       return (

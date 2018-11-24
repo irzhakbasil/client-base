@@ -6,7 +6,6 @@
     top:0;
     left: 0;
     right: calc(100% - 350px);
-    background-color: red;
 }
 .img {
     margin-top: 5px;
