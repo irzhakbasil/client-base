@@ -20,13 +20,18 @@ class Layout extends Component {
     let getIndexesArray = function(arr, serchTerm) {
       //maybe I can create another reselect
       // file to handle this logic?
-      let getKeyValues = function(obj) {
-        let tmp = [];
-        for (let key in obj) {
-          let obj_values = Object.values(obj[key]);
-          tmp = tmp.concat(obj_values);
+      let getKeyValues = function(arr) {
+        let tmpObj = [];
+        for (let a in arr) {
+          let tmp = arr[a];
+          for (let c in tmp) {
+            if (c !== "avatar") {
+              tmpObj.push(tmp[c]);
+            }
+          }
         }
-        return tmp;
+        return tmpObj;
+        console.log(tmpObj);
       };
       let indexes = arr
         .map((client, index) => {
