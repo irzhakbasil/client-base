@@ -17,6 +17,9 @@ class Layout extends Component {
   }
 
   inputChange = text => {
+    if (this.props.error) {
+      return 0;
+    }
     let getIndexesArray = function(arr, serchTerm) {
       //maybe I can create another reselect
       // file to handle this logic?
