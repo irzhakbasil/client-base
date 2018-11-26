@@ -14,10 +14,20 @@ import ClientInfo from "../components/ClientInfo/ClientInfo";
 class Layout extends Component {
   componentDidMount() {
     this.props.fetchClients();
+    setTimeout(() => {
+      if (this.props.error) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 15000);
+      }
+    }, 1000);
   }
 
   inputChange = text => {
     if (this.props.error) {
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
       return 0;
     }
     let getIndexesArray = function(arr, serchTerm) {
