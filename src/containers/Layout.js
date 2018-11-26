@@ -16,9 +16,9 @@ class Layout extends Component {
     this.props.fetchClients();
     setTimeout(() => {
       if (this.props.error) {
-        setTimeout(() => {
-          window.location.reload();
-        }, 15000);
+        setInterval(() => {
+          if (navigator.onLine) window.location.reload();
+        }, 5000);
       }
     }, 1000);
   }
