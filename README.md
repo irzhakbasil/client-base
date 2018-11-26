@@ -1,4 +1,4 @@
-Im not familiar with Semantic UI. I created my own styling. 
+I'm not familiar with Semantic UI so I created my own styling. 
 
 1. Clone
 2. Yarn install
